@@ -9,13 +9,56 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+    
+    var nameString = ("First")
+    var pwdString = ("1234")
+    var result = ""
+    
+    
+    @IBOutlet weak var showLabel1: UILabel!
+    
+    @IBOutlet weak var showLabel2: UILabel!
+    
+    
+    @IBOutlet weak var showLabel3: UILabel!
+    
+    @IBOutlet weak var addTextfield1: UITextField!
+    
+    
+    @IBOutlet weak var addTextfield2: UITextField!
+    
+    
+    
+    
+    @IBAction func clickButton(_ sender: Any) {
+        
+        print("Click Success")
+        
+        nameString = addTextfield1.text!
+        pwdString = addTextfield2.text!
+        
+        if nameString == "First" && pwdString == "1234" {
+            
+            result = "Success"
+            showLabel3.text = result
+            
+            print ("Success")
+    }
+        else {
+            result = "Fail"
+            showLabel3.text = result
+            print ("Fail")
+        }
+        
+    
+    
+    
+        func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
+        func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -23,3 +66,4 @@ class ViewController: UIViewController {
 
 }
 
+}

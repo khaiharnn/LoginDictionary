@@ -54,6 +54,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hW3-QE-qRu"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMP-2G-MlP">
                                 <rect key="frame" x="62" y="127" width="250" height="21"/>
@@ -73,6 +76,15 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjn-F0-rx4">
+                                <rect key="frame" x="87" y="411" width="200" height="0.0"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="IJ9-Ji-8GH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -86,11 +98,20 @@
                             <constraint firstItem="128-uh-3LS" firstAttribute="top" secondItem="zu5-BO-JYx" secondAttribute="bottom" constant="24" id="SS9-dn-iD7"/>
                             <constraint firstItem="128-uh-3LS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sfb-Zs-bDb"/>
                             <constraint firstItem="Tso-Qn-Er2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dX4-8P-cpD"/>
+                            <constraint firstItem="kjn-F0-rx4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hA9-4t-GsX"/>
                             <constraint firstItem="Tso-Qn-Er2" firstAttribute="top" secondItem="128-uh-3LS" secondAttribute="bottom" constant="8" id="txU-JM-k2D"/>
                             <constraint firstItem="dLv-9S-gdn" firstAttribute="top" secondItem="Tso-Qn-Er2" secondAttribute="bottom" constant="43" id="x1G-be-XoP"/>
+                            <constraint firstItem="kjn-F0-rx4" firstAttribute="top" secondItem="dLv-9S-gdn" secondAttribute="bottom" constant="69" id="xt6-NW-V76"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="addTextfield1" destination="zu5-BO-JYx" id="Rpp-3Y-UFT"/>
+                        <outlet property="addTextfield2" destination="Tso-Qn-Er2" id="FKG-md-fma"/>
+                        <outlet property="showLabel1" destination="ZMP-2G-MlP" id="Qhh-zc-zjP"/>
+                        <outlet property="showLabel2" destination="128-uh-3LS" id="QBE-cn-JNg"/>
+                        <outlet property="showLabel3" destination="kjn-F0-rx4" id="7wh-nf-iTb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
