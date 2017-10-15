@@ -10,55 +10,62 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var nameString = ("First")
-    var pwdString = ("1234")
+    // Explicit
+    //
+    var nameString: String = ""
+    var pwdString: String = ""
     var result = ""
     
+    // กำหนดค่าคงที่
+    let userDictionary = ["user1":"1111","user2":"2222","user3":"3333"]
+    let alertDictionary = ["userfalse":"ไม่มี user ในฐานข้อมูล","passfalse":"Please Try Again","authenOK":"Welcome to my app"]
     
-    @IBOutlet weak var showLabel1: UILabel!
+
     
-    @IBOutlet weak var showLabel2: UILabel!
+    @IBOutlet weak var userTextField1: UITextField!
     
+    @IBOutlet weak var pwdTextField2: UITextField!
     
-    @IBOutlet weak var showLabel3: UILabel!
-    
-    @IBOutlet weak var addTextfield1: UITextField!
-    
-    
-    @IBOutlet weak var addTextfield2: UITextField!
-    
-    
-    
+    @IBOutlet weak var alertLabel: UILabel!
     
     @IBAction func clickButton(_ sender: Any) {
         
-        print("Click Success")
+        // Get value Textfield
+        nameString = userTextField1.text!
+        pwdString = pwdTextField2.text!
         
-        nameString = addTextfield1.text!
-        pwdString = addTextfield2.text!
+        //Display ค่าที่รับมาจาก textfield
+        print("User = \(nameString)")
+        print("Pwd = \(pwdString)")
         
-        if nameString == "First" && pwdString == "1234" {
+        let resultString = userDictionary[nameString]
+        print("result = \(String(describing: resultString))")
+        
+        // check user
+        if (resultString == nil) {
+           // Userfalse
+            alertLabel.text = alertDictionary["userfalse"]
+        } else {
             
-            result = "Success"
-            showLabel3.text = result
-            
-            print ("Success")
-    }
-        else {
-            result = "Fail"
-            showLabel3.text = result
-            print ("Fail")
         }
         
+        if (pwdString == resultString){
+            //pwd True
+            alertLabel.text = alertDictionary["authenOK"]
+        }
+        
+        else{
+           // pwd False
+            alertLabel.text = alertDictionary["passfalse"]
+        }
+    } // loginbutton
     
-    
-    
-        func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-        func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -66,4 +73,3 @@ class ViewController: UIViewController {
 
 }
 
-}
